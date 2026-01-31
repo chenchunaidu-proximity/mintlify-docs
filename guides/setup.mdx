@@ -1,0 +1,72 @@
+---
+title: "Setup guide"
+description: "Step-by-step setup for Samay: download, account, and connect"
+---
+
+## Overview
+
+To use Samay you need:
+
+1. **Samay desktop app** (macOS) — records which apps you use and for how long  
+2. **Samay account** — sign up at [getsamay.vercel.app](https://getsamay.vercel.app)  
+3. **Connection** — link the desktop app to your account so activity syncs to the web
+
+<Info>
+The web app at [getsamay.vercel.app](https://getsamay.vercel.app) is where you view Dashboard, Tasks, Insights, and Projects. The desktop app only collects and sends activity; it does not show reports.
+</Info>
+
+## Step 1: Download and install the desktop app
+
+1. Go to the [Samay releases](https://github.com/chenchunaidu-proximity/samay-core-engine/releases) page (or use the direct link: [Samay.dmg v1.0.0](https://github.com/chenchunaidu-proximity/samay-core-engine/releases/download/v1.0.0/Samay.dmg)).
+2. Download **Samay.dmg**.
+3. Open the DMG and drag **Samay** into **Applications**.
+4. Open **Samay** from Applications (you may need to allow it in **System Preferences → Privacy & Security**).
+
+The app will start tracking app usage locally. No data is sent until you connect your account.
+
+## Step 2: Create an account
+
+1. Open [getsamay.vercel.app/sign-up](https://getsamay.vercel.app/sign-up).
+2. Enter:
+   - **Name** — display name
+   - **Email** — used to sign in
+   - **Password** — secure password
+3. Submit the form and complete any email verification if required.
+4. Sign in at [getsamay.vercel.app/login](https://getsamay.vercel.app/login).
+
+## Step 3: Connect to desktop
+
+1. While signed in at [getsamay.vercel.app](https://getsamay.vercel.app), open the **sidebar** (hamburger or sidebar icon if collapsed).
+2. Click **Connect to Desktop**.
+3. Your browser will try to open a link like `samay://token?token=...&url=...`. When prompted, choose **Open** so the Samay app receives the token and API URL.
+4. The Samay desktop app will store the token and start syncing activity to your account.
+
+<Tip>
+If "Connect to Desktop" does nothing, ensure the Samay desktop app is installed and that your browser is allowed to open `samay://` links. On macOS, the app must be run at least once before the custom URL scheme works.
+</Tip>
+
+## Verify setup
+
+1. Use your Mac normally for a few minutes (open a few apps).
+2. In the Samay web app, go to [Dashboard](https://getsamay.vercel.app/dashboard).
+3. Pick **today** in the date picker. You should see **Top apps** and **Top activities** (and possibly **Top tags**) once data has synced.
+
+If nothing appears, check that:
+
+- The desktop app is running.
+- You clicked **Connect to Desktop** and approved opening the `samay://` link.
+- Your network can reach the Samay backend (no firewall blocking it).
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Connect to desktop" icon="desktop" href="/guides/connect-desktop">
+    How linking works and troubleshooting.
+  </Card>
+  <Card title="View time by app" icon="chart-bar" href="/guides/view-time-by-app">
+    Use the Dashboard to see where time goes.
+  </Card>
+  <Card title="Insights" icon="lightbulb" href="/features/insights">
+    Daily summaries and improvement tips.
+  </Card>
+</CardGroup>

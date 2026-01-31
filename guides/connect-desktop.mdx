@@ -1,0 +1,56 @@
+---
+title: "Connect to desktop"
+description: "Link the Samay desktop app to your account"
+---
+
+## What “Connect to Desktop” does
+
+The Samay **web app** shows your data (Dashboard, Tasks, Insights, Projects). The **desktop app** records which applications you use and for how long. To get data from the desktop into the web app, you must connect the two.
+
+**Connect to Desktop** does the following:
+
+1. Reads your **auth token** from the web app (you must be signed in).
+2. Builds a URL: `samay://token?token=YOUR_TOKEN&url=API_BASE_URL/activities`.
+3. Opens that URL in the browser. The OS then hands it to the Samay desktop app via the `samay://` URL scheme.
+4. The desktop app stores the token and API URL and uses them to **upload activity** to your account.
+
+After a successful connection, the desktop app will keep syncing new activity to the backend so it appears on Dashboard, Tasks, and Insights.
+
+## How to connect
+
+<Steps>
+  <Step title="Sign in to the web app">
+    Go to [getsamay.vercel.app](https://getsamay.vercel.app) and sign in. You must be logged in so the web app can use your token.
+  </Step>
+  <Step title="Open the sidebar">
+    If the sidebar is collapsed, expand it. Find **Connect to Desktop** (often near the bottom or in a secondary section, with a desktop/monitor icon).
+  </Step>
+  <Step title="Click Connect to Desktop">
+    Click the link. The browser will ask to open an application (e.g. “Open Samay?”). Choose **Open**.
+  </Step>
+  <Step title="Confirm in the desktop app">
+    The Samay desktop app should receive the token and URL and start syncing. No extra confirmation may be shown; check the Dashboard after a few minutes to see new activity.
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+### Nothing happens when I click “Connect to Desktop”
+
+- **Samay desktop app not installed:** Install it from the [releases page](https://github.com/chenchunaidu-proximity/samay-core-engine/releases) and open it at least once.
+- **Browser blocking the link:** When the browser asks “Open Samay?”, you must click **Open**. If you don’t see a prompt, check browser settings for handling `samay://` links.
+- **Not signed in:** Refresh the page, sign in again, then try **Connect to Desktop** once more.
+
+### I connected but no data appears on the Dashboard
+
+- **Wait a few minutes:** Sync is not always instant. Use your Mac for a bit, then refresh the Dashboard.
+- **Date range:** Set the Dashboard date picker to **today** (or the day you were active).
+- **Desktop app closed:** The desktop app must be running to record and send activity. Restart it and try connecting again if needed.
+
+### “Connect to Desktop” link is missing
+
+- Make sure you’re on the main app area (e.g. Dashboard, Tasks, Insights), not the login or sign-up page. The sidebar with **Connect to Desktop** is only shown when you’re authenticated.
+
+## Technical note
+
+The link uses the custom URL scheme **samay://**. The desktop app registers this scheme so that when the browser opens `samay://token?token=...&url=...`, the OS launches the Samay app and passes it the query parameters. The app then saves the token and API base URL and uses them for all subsequent activity uploads.

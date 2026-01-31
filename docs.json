@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Samay",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#ea580c",
+    "light": "#f97316",
+    "dark": "#c2410c"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -18,51 +18,27 @@
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "guides/setup",
+              "guides/connect-desktop"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Features",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "features/dashboard",
+              "features/tasks",
+              "features/insights",
+              "features/projects",
+              "features/account",
+              "features/admin-dashboard"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "How-to guides",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "guides/view-time-by-app",
+              "guides/manage-projects",
+              "guides/use-insights"
             ]
           }
         ]
@@ -71,14 +47,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Samay App",
+          "href": "https://getsamay.vercel.app",
+          "icon": "clock"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "GitHub",
+          "href": "https://github.com/chenchunaidu-proximity/samay-fe",
+          "icon": "github"
         }
       ]
     }
@@ -90,33 +66,23 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Login",
+        "href": "https://getsamay.vercel.app/login"
+      },
+      {
+        "label": "Sign up",
+        "href": "https://getsamay.vercel.app/sign-up"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open Samay",
+      "href": "https://getsamay.vercel.app/insights"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/chenchunaidu-proximity/samay-fe"
     }
   }
 }

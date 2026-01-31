@@ -1,0 +1,87 @@
+---
+title: "Manage projects"
+description: "Create projects, add members, and view project activity"
+---
+
+## What are projects?
+
+**Projects** in Samay let you group work and optionally add **members**. You can:
+
+- Create projects with a name, description, and icon  
+- Add users to a project (for admins)  
+- Open a project to see its details and **user list**  
+- Use projects (and tags) to see time by category on the Dashboard and elsewhere  
+
+Projects are useful for separating “Work”, “Personal”, “Client A”, etc., and for team visibility when you add members.
+
+## Create a project
+
+1. Go to [Projects](https://getsamay.vercel.app/projects).  
+2. Click **Add project** (or the main “new project” button).  
+3. Fill in:
+   - **Name** — e.g. “Frontend”, “Client X”  
+   - **Description** — optional  
+   - **Icon** — optional; some UIs let you pick an image or avatar  
+4. Submit. The new project appears in the project list.
+
+Only users with permission (e.g. admins or project admins) can create projects; if you don’t see the button, your role may not allow it.
+
+## View project list
+
+On the **Projects** page you see:
+
+- All projects you have access to  
+- For each: name, description, icon (if set)  
+- Clicking a project opens the **project detail** page (e.g. `/projects/[id]`)
+
+## Project detail page
+
+Opening a project shows:
+
+- **Header** — project name, description, icon  
+- **User list** — members of the project  
+
+If you are an **admin** (or project admin), you can:
+
+- **Add users** — invite or add existing users to the project  
+- **Remove users** — remove members from the project  
+- **Update project** — change name, description, or icon  
+- **Delete project** — remove the project (use with care)
+
+Non-admin members typically only see the project info and user list.
+
+## Add users to a project
+
+1. Open the project (click it from the Projects list).  
+2. Use **Add user** (or “Invite” / “Add member”).  
+3. Enter email or select a user from your workspace/organization.  
+4. Confirm. The user is added and can see the project (and may get notifications depending on your setup).
+
+## Remove users
+
+1. Open the project.  
+2. Find the user in the **user list**.  
+3. Use the remove/leave action (e.g. trash icon or “Remove from project”).  
+4. Confirm. The user loses access to that project.
+
+## Permissions
+
+- **Admin users** (site or workspace admins) can create, edit, delete projects and add/remove members.  
+- **Project members** can usually view the project and its user list; some setups allow “project admins” to manage members.  
+- The **Admin Dashboard** (for admins only) lists all users; from there you can manage access and roles.
+
+If you don’t see “Add project” or “Add user”, you’re likely not an admin. Ask an admin to create the project or add you.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Projects feature" icon="folder" href="/features/projects">
+    Full Projects feature description.
+  </Card>
+  <Card title="Admin Dashboard" icon="shield" href="/features/admin-dashboard">
+    Admin overview and user management.
+  </Card>
+  <Card title="Account & workspaces" icon="user" href="/features/account">
+    Account settings and workspaces.
+  </Card>
+</CardGroup>
