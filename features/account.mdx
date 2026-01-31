@@ -1,0 +1,51 @@
+---
+title: "Account"
+description: "Manage your account, profile, and workspaces"
+---
+
+## Overview
+
+The **Account** area lets you manage your **profile** and **workspaces**. You see your name, email, and avatar, and you can manage workspaces (create, edit, invite users, switch workspace). Open it at [getsamay.vercel.app/account](https://getsamay.vercel.app/account) (or via **Account** in the app navigation).
+
+## Features in detail
+
+### Profile section
+
+- **Display:** Your **name**, **email**, and **avatar** (or initials if no image).  
+- **Purpose:** Quick confirmation of who is signed in; base for future profile editing (e.g. change name, email, password, avatar).  
+- **Data source:** From the current auth context (e.g. `user.name`, `user.email`); avatar may be a URL or default.
+
+### Workspaces
+
+- **Workspaces container:** Lists **workspaces** you belong to.  
+- **Per workspace:** Name, optional description; actions such as **edit**, **invite user**, or **leave**.  
+- **Workspace dropdown:** Elsewhere in the app (e.g. sidebar or header), a **workspace selector** lets you **switch** the current workspace.  
+- **Edit workspace:** Change name, description, or other settings (for admins/owners).  
+- **Invite user:** Add users to the workspace by email or selection (for admins/owners).  
+- **Workspace detail:** Some UIs have a workspace detail page (e.g. `/account/workspace/[id]`) for members and settings.
+
+### Workspace vs project
+
+- **Workspace:** Often the top-level “organization” or “team” — you have one current workspace, and data (projects, activity) may be scoped to it.  
+- **Project:** Sub-group under a workspace for organizing work; you can be in multiple projects.  
+- **Account** focuses on **profile** and **workspaces**; **Projects** focuses on **projects** and their members.
+
+### Data and permissions
+
+- **Profile:** Read from auth; edits (if available) may call a profile or user API.  
+- **Workspaces:** Listed and managed via workspace APIs; create/edit/invite/leave depend on your role (admin/owner vs member).
+
+## Related
+
+- **Settings** — app-level settings (e.g. theme, notifications) may live under Settings rather than Account.  
+- **Projects** — projects are usually scoped to a workspace; manage them from the Projects page.  
+- **Admin Dashboard** — admins can manage users and roles across the workspace.
+
+<CardGroup cols={2}>
+  <Card title="Projects" icon="folder" href="/features/projects">
+    Projects and members.
+  </Card>
+  <Card title="Admin Dashboard" icon="shield" href="/features/admin-dashboard">
+    User management (admins).
+  </Card>
+</CardGroup>

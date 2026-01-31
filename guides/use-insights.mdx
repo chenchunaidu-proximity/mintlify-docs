@@ -1,0 +1,74 @@
+---
+title: "Use Insights"
+description: "Daily summaries and AI suggestions to improve your day"
+---
+
+## What are Insights?
+
+**Insights** at [getsamay.vercel.app/insights](https://getsamay.vercel.app/insights) give you:
+
+- **Summary** — a short overview of your recent activity (e.g. “yesterday’s” summary)  
+- **AIs to Improve your day** — suggestions or an improvement plan based on your usage  
+
+Insights are generated from your tracked activity (e.g. using **yesterday’s top 100 tasks**). They help you reflect on where time went and what to change.
+
+## Where to find Insights
+
+1. Sign in at [getsamay.vercel.app](https://getsamay.vercel.app).  
+2. In the **sidebar**, click **Insights**.  
+3. The Insights page shows **Summary** and **AIs to Improve your day** (or similar sections).
+
+<Card title="Open Insights" icon="lightbulb" href="https://getsamay.vercel.app/insights">
+  Go to Samay Insights
+</Card>
+
+## Summary section
+
+- **Content:** A textual summary of your activity, often based on **yesterday’s top 100 tasks**.  
+- **Purpose:** Quick read on “what I did” or “where my time went” without opening the full task list.  
+- **Frequency:** Usually one summary per day (e.g. for the previous day).  
+
+If the summary is empty, you may not have had enough activity in the time window used for generation, or the backend may still be processing.
+
+## AIs to Improve your day
+
+- **Content:** A list or paragraph of **suggestions** or an **improvement plan** (e.g. “spend less time in X”, “block time for Y”).  
+- **Purpose:** Actionable tips to improve focus and productivity based on your actual usage.  
+- **Source:** Generated from your activity (e.g. app usage, duration, patterns).  
+
+Use this section to pick one or two changes to try (e.g. limiting a specific app or scheduling deep work).
+
+## How Insights are generated
+
+- The app sends your **recent activity** (e.g. yesterday’s top 100 tasks) to the backend.  
+- The backend (or an integrated AI service) produces:  
+  - **Summary** — narrative summary of that activity  
+  - **Improvement plan** — suggestions tailored to your usage  
+- The exact algorithm and data window may vary; the UI often states “Generated using yesterday’s top 100 tasks”.
+
+## When Insights are empty or missing
+
+- **No recent activity:** Ensure the **desktop app** is connected and has been recording; check the **Dashboard** for the same period.  
+- **First day:** There may be no “yesterday” data yet; wait until the next day or check again later.  
+- **Errors:** If the page shows an error, try refreshing or reconnecting the desktop app; if it persists, there may be a temporary backend issue.
+
+## Tips for using Insights
+
+1. **Check daily** — make it a short routine (e.g. morning) to read the summary and one improvement.  
+2. **Act on one suggestion** — pick one “AI to improve your day” and try it for a few days.  
+3. **Compare with Dashboard** — use the Dashboard (top apps, total time) to validate what Insights are based on.  
+4. **Use with Projects/tags** — if you use Projects and tags, Insights may (depending on implementation) take them into account for better context.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Insights feature" icon="lightbulb" href="/features/insights">
+    Full Insights feature description.
+  </Card>
+  <Card title="Dashboard" icon="chart-bar" href="/features/dashboard">
+    See the data that feeds Insights.
+  </Card>
+  <Card title="Tasks" icon="list" href="/features/tasks">
+    Browse activities by day or month.
+  </Card>
+</CardGroup>

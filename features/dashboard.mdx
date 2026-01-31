@@ -1,0 +1,63 @@
+---
+title: "Dashboard"
+description: "View top apps, total time, tags, and activities by date range"
+---
+
+## Overview
+
+The **Dashboard** is the main overview of your tracked activity. It shows how much time you spend on applications and activities over a chosen date range. Open it at [getsamay.vercel.app/dashboard](https://getsamay.vercel.app/dashboard).
+
+## Features in detail
+
+### Date range picker
+
+- **Location:** Top of the Dashboard, next to the “Dashboard” title.  
+- **Behavior:** Lets you choose a **from** and **to** date (single day or range).  
+- **Effect:** All sections (Top apps, Top activities, Top tags) use this range.  
+- **Use case:** Compare today vs yesterday, or view a full week or month.
+
+### Top apps
+
+- **Total duration:** Sum of all tracked time in the selected range (e.g. “4h 32m”).  
+- **Top 5 apps:** The five applications you used most, with time per app.  
+- **Display:** Usually app name (and optionally icon), duration, and sometimes percentage of total.  
+- **Use case:** See which apps consume the most time (browser, IDE, Slack, etc.).
+
+### Top tags
+
+- **Content:** Most-used **tags** in the selected range (if your activity is tagged).  
+- **Display:** Tag name and often duration or count.  
+- **Use case:** See time by category or project when you use Projects and tags.
+
+### Top activities
+
+- **Content:** A **list of activities** in the range.  
+- **Per activity:** Typically app (and sometimes window title), duration, time window, optional tags.  
+- **Display:** Cards or rows, often sortable or filterable.  
+- **Use case:** Detailed, chronological view of what you did and for how long.
+
+## Data source
+
+Dashboard data comes from activity **synced by the Samay desktop app** after you **Connect to Desktop**. If you see no data:
+
+1. Ensure the desktop app is installed and running.  
+2. Ensure you clicked **Connect to Desktop** and approved the `samay://` link.  
+3. Use your Mac for a bit and refresh; check that the date range includes the day you were active.
+
+## Related
+
+- **Tasks** — view and filter activities by **day** or **month** (tabs).  
+- **Insights** — daily summary and “AIs to Improve your day” based on your activity.  
+- **Projects** — organize time by project; tags may appear in Top tags on the Dashboard.
+
+<CardGroup cols={2}>
+  <Card title="View time by app" icon="chart-bar" href="/guides/view-time-by-app">
+    How to use the Dashboard effectively.
+  </Card>
+  <Card title="Tasks" icon="list" href="/features/tasks">
+    Day and month views of activities.
+  </Card>
+  <Card title="Insights" icon="lightbulb" href="/features/insights">
+    Daily summaries and improvement suggestions.
+  </Card>
+</CardGroup>

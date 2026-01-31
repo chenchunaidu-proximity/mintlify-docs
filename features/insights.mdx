@@ -1,0 +1,65 @@
+---
+title: "Insights"
+description: "Daily activity insights and AI-powered suggestions to improve your day"
+---
+
+## Overview
+
+**Insights** gives you a **daily summary** of your activity and **AI-generated suggestions** (“AIs to Improve your day”) to help you use time better. It’s available at [getsamay.vercel.app/insights](https://getsamay.vercel.app/insights).
+
+Insights are generated using **yesterday’s top 100 tasks** (or a similar recent activity set), so you see a reflection on your recent usage and actionable tips.
+
+## Features in detail
+
+### Summary section
+
+- **Content:** A short **summary** of your recent activity (e.g. narrative “what you did” or “where time went”).  
+- **Data source:** Based on recent activity (e.g. yesterday’s top 100 tasks).  
+- **Purpose:** Quick read without opening the full task list; good for a daily check-in.  
+- **Display:** Usually a block of text or a list of summary points.
+
+### AIs to Improve your day
+
+- **Content:** **Improvement plan** or list of **suggestions** (e.g. “spend less time in X”, “block time for Y”, “limit Z”).  
+- **Data source:** Generated from your activity (e.g. app usage, duration, patterns).  
+- **Purpose:** Actionable tips to improve focus and productivity.  
+- **Display:** List or cards under a header like “AIs to Improve your day”.
+
+### Header and description
+
+- **Title:** “Insights”.  
+- **Subtitle:** Explains that you’re viewing daily activity insights and summaries, with a note such as “*Generated using yesterday’s top 100 tasks”.  
+- **Loading:** Spinner or skeleton while data is loading.  
+- **Error:** If the request fails, an error card or message is shown (e.g. “Failed to load insights. Please try again later.”).
+
+### Data flow
+
+1. The frontend calls the **insights API** (e.g. `useInsights()`).  
+2. The backend uses your **recent activity** (e.g. yesterday’s top 100 tasks) to generate:  
+   - **dailyInsights** — summary text or list  
+   - **improvementPlan** — suggestions or improvement plan  
+3. The UI renders **Summary** from `dailyInsights` and **AIs to Improve your day** from `improvementPlan`.
+
+## When Insights are empty
+
+- **No recent activity:** Ensure the desktop app is connected and has synced; check the Dashboard for the same period.  
+- **First day:** There may be no “yesterday” data yet.  
+- **Backend/AI limits:** Generation may depend on backend or AI availability; retry later if you see an error.
+
+## Related
+
+- **Dashboard** — see the raw data (top apps, activities) that feeds into Insights.  
+- **Tasks** — browse activities by day/month; “yesterday’s top 100 tasks” is a subset of this data.  
+- **Use Insights** — [how-to guide](/guides/use-insights) for using Insights effectively.
+
+<CardGroup cols={2}>
+  <Card title="Use Insights" icon="lightbulb" href="/guides/use-insights">
+    How to use Insights effectively.
+  </Card>
+  <Card title="Dashboard" icon="chart-bar" href="/features/dashboard">
+    Data that feeds Insights.
+  </Card>
+  <Card title="Tasks" icon="list" href="/features/tasks">
+    Browse activities by day or month.
+  </Card>
+</CardGroup>

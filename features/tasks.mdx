@@ -1,0 +1,55 @@
+---
+title: "Tasks"
+description: "Manage and view your tasks by day or month"
+---
+
+## Overview
+
+**Tasks** lets you browse and manage your tracked activities by **day** or **month**. It’s the detailed view of “what you did” — individual activities with app, duration, and time. Open it at [getsamay.vercel.app/tasks](https://getsamay.vercel.app/tasks).
+
+## Features in detail
+
+### Day and month tabs
+
+- **Day:** Activities for a **single selected date**. You pick the date with a date picker; the list shows all activities for that day.  
+- **Month:** Activities for a **month** (or month range). You select a month; the list shows activities in that period.  
+- **Use case:** Day view for “what did I do today/yesterday”; month view for weekly or monthly review.
+
+### Day view
+
+- **Date picker:** Choose the day (e.g. today, yesterday, or any past date).  
+- **Activities list:** Each item typically includes:  
+  - **App** (and sometimes window title or description)  
+  - **Duration**  
+  - **Time window** (start/end or timestamp)  
+  - Optional **tags** or project  
+- **Empty state:** If there’s no activity for that day, a message or empty list is shown.  
+- **Loading/error:** Loading spinner while fetching; error message if the request fails.
+
+### Month view
+
+- **Month selector:** Choose the month (and possibly year).  
+- **Activities list:** Same structure as day view but for the whole month (or month range).  
+- **Use case:** Billing, reporting, or “how much did I work in March?”.
+
+### Data source
+
+Tasks data comes from the same backend as the **Dashboard** — activity synced by the **Samay desktop app** after you **Connect to Desktop**. The backend returns activities filtered by the selected date or month.
+
+## Related
+
+- **Dashboard** — top apps, total duration, and top activities for a date range.  
+- **Insights** — daily summary and “AIs to Improve your day” (e.g. from yesterday’s top 100 tasks).  
+- **Projects** — organize work; project/tag info may appear on activity cards if you use Projects.
+
+<CardGroup cols={2}>
+  <Card title="Dashboard" icon="chart-bar" href="/features/dashboard">
+    Top apps and activities by date range.
+  </Card>
+  <Card title="Insights" icon="lightbulb" href="/features/insights">
+    Daily summaries and improvement suggestions.
+  </Card>
+  <Card title="Projects" icon="folder" href="/features/projects">
+    Organize time by project.
+  </Card>
+</CardGroup>

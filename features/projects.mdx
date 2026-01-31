@@ -1,0 +1,77 @@
+---
+title: "Projects"
+description: "Organize work with projects, add members, and view project details"
+---
+
+## Overview
+
+**Projects** let you group work and optionally add **members**. You can create projects, open them to see details and a **user list**, and (as an admin) add or remove users, update, or delete projects. Open the list at [getsamay.vercel.app/projects](https://getsamay.vercel.app/projects).
+
+## Features in detail
+
+### Projects list
+
+- **Content:** All projects you have access to.  
+- **Per project:** Name, description, icon (if set).  
+- **Action:** Click a project to open the **project detail** page (`/projects/[id]`).  
+- **Add project:** Button (e.g. “Add project”) to create a new project — visible to users with permission (e.g. admins).
+
+### Create project (Add project)
+
+- **Form fields:** Typically **name**, **description**, and optionally **icon** (or avatar/image).  
+- **Validation:** Name required; description and icon optional.  
+- **Submit:** Creates the project and adds it to the list; you may be redirected to the new project or stay on the list.  
+- **Permission:** Only users who can create projects (e.g. admins) see the button and form.
+
+### Project detail page
+
+- **URL:** `/projects/[id]` (e.g. [getsamay.vercel.app/projects/123](https://getsamay.vercel.app/projects)).  
+- **Header:** Project **name**, **description**, and **icon** (e.g. avatar or image).  
+- **User list:** All **members** of the project.  
+- **Admin actions (if you’re an admin):**  
+  - **Update project** — change name, description, icon  
+  - **Delete project** — remove the project  
+  - **Add users** — invite or add existing users to the project  
+  - **Remove users** — remove members from the project  
+- **Non-admin:** Usually can only view project info and user list.
+
+### Add users to a project
+
+- **Entry point:** On the project detail page, an “Add user” (or “Invite” / “Add member”) action.  
+- **Flow:** Enter email or select a user from your workspace/organization; submit to add them to the project.  
+- **Permission:** Only admins (or project admins) can add users.
+
+### Remove users from a project
+
+- **Entry point:** In the project’s user list, a remove/leave action per user (e.g. trash icon or “Remove from project”).  
+- **Permission:** Only admins (or project admins) can remove users.
+
+### Projects and Dashboard/Tasks
+
+- Projects (and **tags**) can be used to categorize activity.  
+- On the **Dashboard**, **Top tags** may reflect project or category tags.  
+- In **Tasks**, activity cards may show project or tag info if the backend and UI support it.
+
+## Permissions
+
+- **Admin users** (site or workspace admins) can create, edit, delete projects and add/remove members.  
+- **Project members** can view the project and its user list; some setups allow “project admins” to manage members.  
+- The **Admin Dashboard** (for admins only) lists all users and supports user/role management.
+
+## Related
+
+- **Manage projects** — [how-to guide](/guides/manage-projects) for creating projects and managing members.  
+- **Admin Dashboard** — [feature](/features/admin-dashboard) for user and access management.  
+- **Account** — [feature](/features/account) for account settings and workspaces.
+
+<CardGroup cols={2}>
+  <Card title="Manage projects" icon="folder" href="/guides/manage-projects">
+    Create projects and manage members.
+  </Card>
+  <Card title="Admin Dashboard" icon="shield" href="/features/admin-dashboard">
+    User list and admin actions.
+  </Card>
+  <Card title="Account" icon="user" href="/features/account">
+    Account and workspaces.
+  </Card>
+</CardGroup>

@@ -1,0 +1,60 @@
+---
+title: "Admin Dashboard"
+description: "User list and admin-only actions (visible to admins only)"
+---
+
+## Overview
+
+The **Admin Dashboard** is an **admin-only** area that lists all **users** (e.g. in the workspace or organization) and lets you open each user’s detail view (e.g. by profile ID). It is only visible when you have admin rights. Open it at [getsamay.vercel.app/admin-dashboard](https://getsamay.vercel.app/admin-dashboard).
+
+## Features in detail
+
+### Visibility
+
+- **Sidebar:** “Admin Dashboard” appears in the main nav only if the current user is an **admin** (e.g. `checkIsAdmin()` returns true).  
+- **Non-admins:** The link is hidden; direct URL access may return 403 or redirect.  
+- **Use case:** Central place for admins to see and manage users.
+
+### User list
+
+- **Content:** Grid or list of **users**.  
+- **Per user:** Typically **name**, **email**, and optionally **avatar** or **profile ID**.  
+- **Data source:** Fetched via an admin API (e.g. `useGetAllUsers()`); returns all users the admin is allowed to see.  
+- **Loading:** “Loading users…” or skeleton while fetching.  
+- **Error:** If the request fails, an error message is shown (e.g. “Error loading users: [message]”).
+
+### User cards and navigation
+
+- **Click behavior:** Each user card is a **link** to `/admin-dashboard/[profileId]` (e.g. `/admin-dashboard/abc123`).  
+- **User detail page:** Shows that user’s **activity by date** — calendar, month/year selector, and activity data for the selected date(s).  
+- **Purpose:** Admins can inspect a specific user’s activity (e.g. for support, compliance, or reporting).
+
+### User detail page (by ID)
+
+- **URL:** `/admin-dashboard/[id]` for a user, and optionally `/admin-dashboard/[id]/[date]` for a specific date.  
+- **Components:**  
+  - **Header** — user info and date context  
+  - **Month/year selector** — choose month and year  
+  - **Calendar** — calendar view of activity or availability  
+  - **Activity data** — activities for the selected date(s)  
+- **Use case:** “How much did this user work on this day/month?” or “What did they do?”
+
+## Permissions
+
+- **Admins only:** All Admin Dashboard routes and APIs should be restricted to users with an admin role.  
+- **Non-admins:** Should not see the nav item and should not be able to access the pages or APIs.
+
+## Related
+
+- **Account** — profile and workspaces; admins may manage workspace membership here or in a separate area.  
+- **Projects** — admins can create projects and add/remove members; project membership is separate from the Admin Dashboard user list.  
+- **Tasks / Dashboard** — the activity data shown in the admin user-by-date view is the same kind of data as in Tasks and Dashboard, but for another user.
+
+<CardGroup cols={2}>
+  <Card title="Account" icon="user" href="/features/account">
+    Profile and workspaces.
+  </Card>
+  <Card title="Projects" icon="folder" href="/features/projects">
+    Create projects and manage members.
+  </Card>
+</CardGroup>
